@@ -4,6 +4,7 @@ import 'package:window_manager/window_manager.dart';
 import 'package:system_theme/system_theme.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart';
 
+import './screens/home.dart';
 import './screens/unsupported.dart';
 
 bool get isWindows => defaultTargetPlatform == TargetPlatform.windows;
@@ -21,10 +22,13 @@ void main() async {
         TitleBarStyle.hidden,
       );
       await windowManager.setSize(const Size(800, 600));
+      await windowManager.setTitle('ints pdf viewer');
+      await windowManager.setBackgroundColor(Colors.transparent);
       await windowManager.center();
       await windowManager.show();
-      await windowManager.setPreventClose(true);
+      // await windowManager.setPreventClose(true);
       await windowManager.focus();
+      await windowManager.setMovable(true);
     });
     runApp(const MyApp());
   }
@@ -35,22 +39,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const FluentApp(
+    return FluentApp(
       title: 'ints',
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return NavigationView(
-      pane: NavigationPane(
-        displayMode: PaneDisplayMode.compact,
+      theme: ThemeData(
+        brightness: Brightness.dark,
       ),
+      home: const MyHomePage(),
     );
   }
 }
