@@ -15,6 +15,17 @@ void main() async {
     runApp(const UnsupportedApp());
   } else {
     await WindowManager.instance.ensureInitialized();
+    await SystemTheme.accentColor.load();
+    windowManager.waitUntilReadyToShow().then((_) async {
+      await windowManager.setTitleBarStyle(
+        TitleBarStyle.hidden,
+      );
+      await windowManager.setSize(const Size(800, 600));
+      await windowManager.center();
+      await windowManager.show();
+      await windowManager.setPreventClose(true);
+      await windowManager.focus();
+    });
     runApp(const MyApp());
   }
 }
@@ -25,8 +36,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const FluentApp(
-      title: 'Flutter Demo',
-      // theme: FluentThemeData.Dark(),
+      title: 'ints',
       home: MyHomePage(),
     );
   }
