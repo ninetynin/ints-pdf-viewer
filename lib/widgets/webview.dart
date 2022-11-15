@@ -2,7 +2,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:webview_windows/webview_windows.dart';
 
 class WVcontainer extends StatefulWidget {
-  final url;
+  var url;
   var rowcont, colmncount;
   WVcontainer({Key? key, this.url, this.rowcont, this.colmncount})
       : super(key: key);
