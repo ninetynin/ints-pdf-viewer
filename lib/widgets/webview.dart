@@ -2,10 +2,11 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:webview_windows/webview_windows.dart';
 
 class WVcontainer extends StatefulWidget {
-  var url;
-  var rowcont, colmncount;
-  WVcontainer({Key? key, this.url, this.rowcont, this.colmncount})
-      : super(key: key);
+  final url;
+  // var rowcont, colmncount;
+  // WVcontainer({Key? key, this.url, this.rowcont, this.colmncount})
+  //     : super(key: key);
+  const WVcontainer({Key? key, this.url}) : super(key: key);
 
   @override
   State<WVcontainer> createState() => _WVcontainerState();
@@ -55,8 +56,10 @@ class _WVcontainerState extends State<WVcontainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: MediaQuery.of(context).size.height / widget.rowcont,
-        width: MediaQuery.of(context).size.width / widget.colmncount,
+        // height: MediaQuery.of(context).size.height / widget.rowcont,
+        // width: MediaQuery.of(context).size.width / widget.colmncount,
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width / 2,
         child: Stack(
           children: [
             Webview(

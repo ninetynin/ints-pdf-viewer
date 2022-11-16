@@ -4,7 +4,7 @@ import 'package:desktop_drop/desktop_drop.dart';
 import 'package:flutter/material.dart';
 import 'package:google_search_suggestions/google_search_suggestions.dart';
 
-import '../../widgets/webview.dart';
+import 'webview.dart';
 
 class OnesampleCont extends StatelessWidget {
   const OnesampleCont({Key? key}) : super(key: key);
@@ -23,13 +23,12 @@ class OnesampleCont extends StatelessWidget {
                   return value!.files.single.path;
                 });
                 if (filepath != " ") {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => WVcontainer(
-                        url: filepath,
-                        rowcont: 2,
-                        colmncount: 1,
+                  Container(
+                    child: NavigationView(
+                      content: Center(
+                        child: WVcontainer(
+                          url: filepath,
+                        ),
                       ),
                     ),
                   );
