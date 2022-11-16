@@ -28,7 +28,7 @@ class OnesampleCont extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (context) => WVcontainer(
                         url: filepath,
-                        rowcont: 1,
+                        rowcont: 2,
                         colmncount: 1,
                       ),
                     ),

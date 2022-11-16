@@ -26,7 +26,7 @@ class _WVcontainerState extends State<WVcontainer> {
     _controller.url.listen((url) {
       _textconroller.text = url;
     });
-    await _controller.loadUrl(WVcontainer().url);
+    await _controller.loadUrl(widget.url);
     if (!mounted) return;
     setState(() {});
   }
@@ -55,8 +55,8 @@ class _WVcontainerState extends State<WVcontainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: MediaQuery.of(context).size.height / WVcontainer().rowcont,
-        width: MediaQuery.of(context).size.width / WVcontainer().colmncount,
+        height: MediaQuery.of(context).size.height / widget.rowcont,
+        width: MediaQuery.of(context).size.width / widget.colmncount,
         child: Stack(
           children: [
             Webview(

@@ -19,7 +19,8 @@ void main() async {
     await SystemTheme.accentColor.load();
     windowManager.waitUntilReadyToShow().then((_) async {
       await windowManager.setTitleBarStyle(
-        TitleBarStyle.hidden,
+        // TitleBarStyle.hidden,
+        TitleBarStyle.normal,
       );
       await windowManager.setSize(const Size(800, 600));
       await windowManager.setTitle('ints pdf viewer');
