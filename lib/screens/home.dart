@@ -2,7 +2,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 
 import '../widgets/1sample.dart';
-import '../models/titlebar/titlebar.dart';
+import '../modules/titlebar/titlebar.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -64,28 +64,13 @@ class LeftSide extends StatelessWidget {
                   Expanded(
                     child: Container(),
                   ),
-                  const WindowButtons()
+                  const GeneralWNBTNS(),
                 ],
               ),
             ),
           ],
         ),
       ),
-    );
-  }
-}
-
-class WindowButtons extends StatelessWidget {
-  const WindowButtons({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        MinimizeWindowButton(),
-        MaximizeWindowButton(),
-        CloseWindowButton(),
-      ],
     );
   }
 }

@@ -22,13 +22,12 @@ void main() async {
         // TitleBarStyle.normal,
       );
       await windowManager.setSize(const Size(800, 600));
-      await windowManager.setTitle('ints pdf viewer');
+      await windowManager.setMovable(true);
       await windowManager.setBackgroundColor(Colors.transparent);
       await windowManager.center();
       await windowManager.show();
       // await windowManager.setPreventClose(true);
-      await windowManager.focus();
-      await windowManager.setMovable(true);
+      // await windowManager.focus();
     });
     runApp(const MyApp());
   }
